@@ -3,12 +3,10 @@ import { Link, useLocation } from "react-router";
 
 // Assume these icons are imported from an icon library
 import {
-  BoxCubeIcon,
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
   PageIcon,
-  PlugInIcon,
   UserCircleIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
@@ -42,27 +40,7 @@ const navItems: NavItem[] = [
 ];
 
 const othersItems: NavItem[] = [
- 
-  {
-    icon: <BoxCubeIcon />,
-    name: "UI Elements",
-    subItems: [
-      { name: "Alerts", path: "/alerts", pro: false },
-      { name: "Avatar", path: "/avatars", pro: false },
-      { name: "Badge", path: "/badge", pro: false },
-      { name: "Buttons", path: "/buttons", pro: false },
-      { name: "Images", path: "/images", pro: false },
-      { name: "Videos", path: "/videos", pro: false },
-    ],
-  },
-  {
-    icon: <PlugInIcon />,
-    name: "Authentication",
-    subItems: [
-      { name: "Sign In", path: "/signin", pro: false },
-      { name: "Sign Up", path: "/signup", pro: false },
-    ],
-  },
+
 ];
 
 const AppSidebar: React.FC = () => {
