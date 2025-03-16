@@ -9,7 +9,7 @@ export default function Home() {
         description="This is React.js HomeDashboard page for TailAdmin - React.js Tailwind CSS Admin Dashboard Template"
       />
       <div>
-        <h1>Home</h1>
+        <h1 className="dark:text-gray-400">Home</h1>
       </div>
     </>
   );
