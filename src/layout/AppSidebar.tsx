@@ -6,7 +6,6 @@ import {
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
-  PageIcon,
   UserCircleIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
@@ -29,13 +28,6 @@ const navItems: NavItem[] = [
     icon: <UserCircleIcon />,
     name: "User Profile",
     path: "/profile",
-  },
-  {
-    name: "Pages",
-    icon: <PageIcon />,
-    subItems: [
-      { name: "404 Error", path: "/error-404", pro: false },
-    ],
   },
 ];
 
