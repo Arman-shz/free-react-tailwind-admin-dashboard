@@ -2,9 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
-import User from "./pages/Dashboard/User";
-import UserAdd from "./components/user/userAdd";
-import UserEdit from "./components/user/userEdit";
+import UserList from "./pages/Dashboard/User";
 
 export default function App() {
   return (
@@ -15,9 +13,7 @@ export default function App() {
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
-            <Route index path="/user" element={<User />} />
-            <Route index path="/user-add" element={<UserAdd />} />
-            <Route index path="/user-edit" element={<UserEdit />} />
+            <Route index path="/userList" element={<UserList />} />
           </Route>
         </Routes>
       </Router>

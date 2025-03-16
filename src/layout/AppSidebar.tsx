@@ -20,13 +20,13 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
-    name: "Dashboard",
-    subItems: [{ name: "Home", path: "/", pro: false }],
+    name: "داشبورد",
+    subItems: [{ name: "خانه", path: "/", pro: false }],
   },
   {
     icon: <UserCircleIcon />,
-    name: "User",
-    subItems: [{ name: "UserList", path: "/user", pro: false }],
+    name: "کاربران",
+    subItems: [{ name: "لیست کاربران", path: "/userList", pro: false }],
   },
 ];
 
@@ -285,7 +285,7 @@ const AppSidebar: React.FC = () => {
                 }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "Menu"
+                  "منو"
                 ) : (
                   <HorizontaLDots className="size-6" />
                 )}
