@@ -19,7 +19,7 @@ const UserEdit: React.FC<EditUserProps> = ({ user, onEdit, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-100 ml-[300px] bg-opacity-50 dark:bg-gray-900">
+    <div className="fixed inset-0 w-[1600px] flex items-center justify-center bg-gray-100 ml-[300px] bg-opacity-50 dark:bg-gray-900">
       <div className="bg-white p-6 rounded-lg shadow-lg w-96 dark:bg-gray-600">
         <h3 className="text-xl font-bold mb-4">ویرایش کاربر</h3>
         <input

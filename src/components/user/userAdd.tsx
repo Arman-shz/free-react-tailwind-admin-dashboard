@@ -25,7 +25,7 @@ const UserAdd: React.FC<AddUserProps> = ({ onAdd, onClose }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-50 dark:bg-gray-900 ">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96 ml-[300px] dark:bg-gray-600 ">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-96 ml-[-120px] dark:bg-gray-600 ">
         <h3 className="text-xl font-bold mb-4">افزودن کاربر</h3>
         <input
           className="w-full p-2 mb-2 border rounded outline-none"

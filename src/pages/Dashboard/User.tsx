@@ -45,7 +45,7 @@ const UserList: React.FC = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen dark:bg-gray-900 dark:border-gray-800 text-gray-900">
+    <div className="p-6 bg-gray-100 w-[1200px] mr-[185px] min-h-screen dark:bg-gray-900 dark:border-gray-800 text-gray-900">
       <h2 className="text-2xl border-b-[2px] p-4 mb-8 border-lightgray-800 dark:border-gray-800  dark:text-gray-400 flex justify-center items-center">لیست کاربران</h2>
       <button
         className="bg-blue-500 text-white px-4 py-2 rounded mb-4 hover:bg-gray-800 transition-all duration-500"
