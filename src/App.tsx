@@ -11,11 +11,11 @@ export default function App() {
       <Router>
         <ScrollToTop />
         <Routes>
+          <Route index path="/login" element={<LoginForm />}/>
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
             <Route index path="/userList" element={<UserList />} />
-            <Route index path="/login" element={<LoginForm />}/>
           </Route>
         </Routes>
       </Router>
