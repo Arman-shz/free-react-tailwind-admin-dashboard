@@ -5,6 +5,9 @@ import Home from "./pages/Dashboard/Home";
 import UserList from "./pages/Dashboard/User";
 import LoginForm from "./pages/Login/LoginForm";
 import Product from "./pages/Dashboard/Product";
+import AddProduct from "./components/product/addProduct";
+import EditProduct from "./components/product/editProduct";
+import ProductDetails from "./components/product/productDetails";
 
 export default function App() {
   return (
@@ -18,6 +21,9 @@ export default function App() {
             <Route index path="/" element={<Home />} />
             <Route index path="/userList" element={<UserList />} />
             <Route index path="/productList" element={<Product />} />
+            <Route path="/productList/add" element={<AddProduct />} />
+            <Route path="/productList/edit/:id" element={<EditProduct />} />
+            <Route path="/productList/details/:id" element={<ProductDetails />} />
           </Route>
         </Routes>
       </Router>
