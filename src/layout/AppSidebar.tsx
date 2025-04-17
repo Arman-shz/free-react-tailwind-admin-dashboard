@@ -7,6 +7,7 @@ import {
   GridIcon,
   HorizontaLDots,
   UserCircleIcon,
+  BoxCubeIcon
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 
@@ -27,6 +28,11 @@ const navItems: NavItem[] = [
     icon: <UserCircleIcon />,
     name: "کاربران",
     subItems: [{ name: "لیست کاربران", path: "/userList", pro: false }],
+  },
+  {
+    icon: <BoxCubeIcon />,
+    name: "محصولات",
+    subItems: [{ name: "لیست محصولات", path: "/productList", pro: false }],
   },
 ];
 
