@@ -15,12 +15,12 @@ export default function App() {
       <Router>
         <ScrollToTop />
         <Routes>
-          <Route index path="/login" element={<LoginForm />}/>
+          <Route path="/login" element={<LoginForm />}/>
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
-            <Route index path="/userList" element={<UserList />} />
-            <Route index path="/productList" element={<Product />} />
+            <Route path="/userList" element={<UserList />} />
+            <Route path="/productList" element={<Product />} />
             <Route path="/productList/add" element={<AddProduct />} />
             <Route path="/productList/edit/:id" element={<EditProduct />} />
             <Route path="/productList/details/:id" element={<ProductDetails />} />

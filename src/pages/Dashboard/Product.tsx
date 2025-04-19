@@ -70,48 +70,54 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="p-6">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold mr-[90px]">محصولات</h1>
+    <div className="p-6 bg-gray-100 dark:bg-gray-900 min-h-screen">
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mr-[90px]">
+          محصولات
+        </h1>
         <button
-          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 ml-[35px]"
+          className="bg-green-600 text-white px-4 py-2 rounded-xl shadow-md hover:bg-green-700 transition-all ml-[4px]"
           onClick={() => navigate("/productList/add")}
         >
-          محصول جدید
+          + محصول جدید
         </button>
       </div>
-
+  
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mr-[90px]">
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white shadow-lg rounded-xl p-4 flex flex-col items-center w-100"
+            className="bg-white dark:bg-gray-800 shadow-md hover:shadow-xl transition-all rounded-2xl p-4 flex flex-col items-center"
           >
             <img
               src={product.image}
               alt={product.brand}
-              className="w-54 h-42 object-cover rounded-lg mb-4"
+              className="w-90 h-60 object-cover rounded-xl mb-4"
             />
-            <h2 className="text-lg font-semibold">{product.brand}</h2>
-            <p className="text-gray-600">تومان{product.price}</p>
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+              {product.brand}
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300">
+              {product.price.toLocaleString()} تومان
+            </p>
             <div className="mt-4 flex flex-wrap gap-2 justify-center">
               <button
-                className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+                className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition"
                 onClick={() => navigate(`/productList/edit/${product.id}`)}
               >
                 ویرایش
               </button>
               <button
-                className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600"
+                className="bg-gray-600 text-white px-4 py-1 rounded hover:bg-gray-700 transition"
                 onClick={() => navigate(`/productList/details/${product.id}`)}
               >
-                جزییات
+                جزئیات
               </button>
               <button
-                className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700"
+                className="bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700 transition"
                 onClick={() => handleDelete(product.id)}
               >
-              حذف
+                حذف
               </button>
             </div>
           </div>
@@ -119,6 +125,7 @@ const ProductPage = () => {
       </div>
     </div>
   );
+  
 };
 
 export default ProductPage;
