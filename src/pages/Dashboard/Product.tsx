@@ -70,20 +70,20 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 dark:bg-gray-900 min-h-screen">
+    <div className="p-6 bg-gray-100 dark:bg-gray-900 w-[1250px] mr-[180px]">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mr-[90px]">
+        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mr-[50px]">
           محصولات
         </h1>
         <button
-          className="bg-green-600 text-white px-4 py-2 rounded-xl shadow-md hover:bg-green-700 transition-all ml-[4px]"
+          className="bg-green-600 text-white px-4 py-2 rounded-xl shadow-md hover:bg-green-700 transition-all ml-[50px]"
           onClick={() => navigate("/productList/add")}
         >
           + محصول جدید
         </button>
       </div>
   
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mr-[90px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mr-[50px] ml-[50px]">
         {products.map((product) => (
           <div
             key={product.id}
