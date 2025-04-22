@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Product } from "../../components/product/types";
+import { Pencil, Trash2, Info, Plus } from "lucide-react";
 
 const ProductPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -70,62 +71,69 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 dark:bg-gray-900 w-[1250px] mr-[180px]">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mr-[50px]">
-          محصولات
-        </h1>
-        <button
-          className="bg-green-600 text-white px-4 py-2 rounded-xl shadow-md hover:bg-green-700 transition-all ml-[50px]"
-          onClick={() => navigate("/productList/add")}
-        >
-          + محصول جدید
-        </button>
-      </div>
-  
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mr-[50px] ml-[50px]">
+    <div className="min-h-screen dark:bg-gradient-to-br from-[#1e1e2f] via-[#2d2d44] to-[#3f3f5a] px-6 py-10">
+     <div className="flex justify-between items-center mb-10 max-w-7xl mx-auto">
+     <h1 className="text-4xl font-extrabold text-gray-500">لیست محصولات</h1>
+    
+     <button
+      className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-2 rounded-xl shadow-lg hover:brightness-120 transition-all"
+      onClick={() => navigate("/productList/add")}
+     >
+      <Plus size={18} />
+      محصول جدید
+     </button>
+    </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {products.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white dark:bg-gray-800 shadow-md hover:shadow-xl transition-all rounded-2xl p-4 flex flex-col items-center"
-          >
-            <img
-              src={product.image}
-              alt={product.brand}
-              className="w-90 h-60 object-cover rounded-xl mb-4"
-            />
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-              {product.brand}
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300">
-              {product.price.toLocaleString()} تومان
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2 justify-center">
-              <button
-                className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition"
-                onClick={() => navigate(`/productList/edit/${product.id}`)}
-              >
-                ویرایش
-              </button>
-              <button
-                className="bg-gray-600 text-white px-4 py-1 rounded hover:bg-gray-700 transition"
-                onClick={() => navigate(`/productList/details/${product.id}`)}
-              >
-                جزئیات
-              </button>
-              <button
-                className="bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700 transition"
-                onClick={() => handleDelete(product.id)}
-              >
-                حذف
-              </button>
-            </div>
-          </div>
+        
+<div
+  key={product.id}
+  className="group relative rounded-3xl bg-gradient-to-tr from-purple-500 via-pink-500 to-red-500 p-[2px] shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-transform"
+>
+  <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-4 h-full flex flex-col justify-between">
+    <div className="overflow-hidden rounded-2xl shadow-md">
+      <img
+        src={product.image}
+        alt={product.brand}
+        className="w-full h-48 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+    <div className="mt-4 text-white text-center">
+      <h2 className="text-2xl font-extrabold tracking-tight">{product.brand}</h2>
+      <p className="text-sm text-white/80 mt-1">{product.description}</p>
+    </div>
+    <div className="mt-3 text-center">
+      <span className="inline-block bg-white/20 px-4 py-1 text-lg rounded-full text-yellow-300 shadow-md">
+        {product.price.toLocaleString()} تومان
+      </span>
+    </div>
+    <div className="mt-5 flex justify-center gap-3 text-sm font-medium">
+      <button
+        onClick={() => navigate(`/productList/edit/${product.id}`)}
+        className="flex items-center gap-1 px-4 py-2 rounded-full bg-white/20 hover:bg-white/30 text-white transition-all"
+      >
+        <Pencil size={16} /> ویرایش
+      </button>
+      <button
+        onClick={() => navigate(`/productList/details/${product.id}`)}
+        className="flex items-center gap-1 px-4 py-2 rounded-full bg-white/20 hover:bg-white/30 text-white transition-all"
+      >
+        <Info size={16} /> جزئیات
+      </button>
+      <button
+        onClick={() => handleDelete(product.id)}
+        className="flex items-center gap-1 px-4 py-2 rounded-full bg-red-500 hover:bg-red-700 text-white transition-all"
+      >
+        <Trash2 size={16} /> حذف
+      </button>
+    </div>
+  </div>
+</div>
         ))}
       </div>
     </div>
   );
-  
 };
 
 export default ProductPage;
