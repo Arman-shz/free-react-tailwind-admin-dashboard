@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Product } from "../../components/product/types";
-import { Pencil, Trash2, Info, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 const ProductPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -76,7 +76,8 @@ const ProductPage = () => {
      <h1 className="text-4xl font-extrabold text-gray-500">لیست محصولات</h1>
     
      <button
-      className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-2 rounded-xl shadow-lg hover:brightness-120 transition-all"
+      className="flex items-center gap-2 bg-gradient-to-br from-[#00A8E8] via-[#007EA7] to-[#003459]
+      text-white px-5 py-2 rounded-xl shadow-lg hover:brightness-120 transition-all"
       onClick={() => navigate("/productList/add")}
      >
       <Plus size={18} />
@@ -89,43 +90,50 @@ const ProductPage = () => {
         
 <div
   key={product.id}
-  className="group relative rounded-3xl bg-gradient-to-tr from-purple-500 via-pink-500 to-red-500 p-[2px] shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-transform"
+  className="bg-white rounded-3xl shadow-lg overflow-hidden relative transition-transform hover:scale-105"
 >
-  <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-4 h-full flex flex-col justify-between">
-    <div className="overflow-hidden rounded-2xl shadow-md">
+  <div className="relative h-32 bg-cyan-500">
+    <div className="absolute bottom-0 left-0 w-full h-8 bg-white rotate-[4deg] origin-top-left z-10"></div>
+
+    <div className="absolute top-3 right-3 z-20 bg-white rounded-full px-4 py-2 text-cyan-600 font-bold text-lg shadow-md">
+      {product.price.toLocaleString()} تومان
+    </div>
+
+    <div className="absolute top-3 left-3 z-20 text-white">
+      <h3 className="font-bold text-lg">{product.brand}</h3>
+      <p className="text-sm">{product.description}</p>
+    </div>
+  </div>
+
+  <div className="relative z-10 -mt-10 flex justify-center">
+    <div className="w-40 h-40 rounded-full border-4 border-white overflow-hidden shadow-md bg-white">
       <img
         src={product.image}
         alt={product.brand}
-        className="w-full h-48 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+        className="w-full h-full object-cover"
       />
     </div>
-    <div className="mt-4 text-white text-center">
-      <h2 className="text-2xl font-extrabold tracking-tight">{product.brand}</h2>
-      <p className="text-sm text-white/80 mt-1">{product.description}</p>
-    </div>
-    <div className="mt-3 text-center">
-      <span className="inline-block bg-white/20 px-4 py-1 text-lg rounded-full text-yellow-300 shadow-md">
-        {product.price.toLocaleString()} تومان
-      </span>
-    </div>
-    <div className="mt-5 flex justify-center gap-3 text-sm font-medium">
+  </div>
+
+  <div className="px-6 pt-6 pb-4 flex flex-col items-center gap-3">
+    <button
+      onClick={() => navigate(`/productList/details/${product.id}`)}
+      className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold py-2 px-6 rounded-full shadow hover:brightness-110"
+    >
+      مشاهده جزئیات
+    </button>
+    <div className="flex gap-3">
       <button
         onClick={() => navigate(`/productList/edit/${product.id}`)}
-        className="flex items-center gap-1 px-4 py-2 rounded-full bg-white/20 hover:bg-white/30 text-white transition-all"
+        className="text-sm text-cyan-600 border border-cyan-500 rounded-full px-4 py-1 hover:bg-cyan-100"
       >
-        <Pencil size={16} /> ویرایش
-      </button>
-      <button
-        onClick={() => navigate(`/productList/details/${product.id}`)}
-        className="flex items-center gap-1 px-4 py-2 rounded-full bg-white/20 hover:bg-white/30 text-white transition-all"
-      >
-        <Info size={16} /> جزئیات
+        ویرایش
       </button>
       <button
         onClick={() => handleDelete(product.id)}
-        className="flex items-center gap-1 px-4 py-2 rounded-full bg-red-500 hover:bg-red-700 text-white transition-all"
+        className="text-sm text-red-600 border border-red-500 rounded-full px-4 py-1 hover:bg-red-100"
       >
-        <Trash2 size={16} /> حذف
+        حذف
       </button>
     </div>
   </div>
