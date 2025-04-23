@@ -42,7 +42,7 @@ const AddProduct = () => {
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-gradient-to-r from-white via-gray-50 to-gray-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 rounded-3xl shadow-lg mt-10">
-      <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white text-center mb-6">
+      <h1 className="text-4xl font-vazirmatn text-gray-800 dark:text-white text-center mb-6">
         اضافه کردن محصول جدید
       </h1>
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -99,7 +99,7 @@ const AddProduct = () => {
           <button
             type="button"
             onClick={() => navigate("/productList")}
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white font-semibold transition-all"
+            className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white font-vazirmatn transition-all"
           >
             کنسل
           </button>

@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center mt-56">
-      <h1 className="text-2xl font-bold mb-4 dark:text-slate-600">خوش آمدید</h1>
+      <h1 className="text-2xl font-vazirmatn mb-4 dark:text-slate-600">خوش آمدید</h1>
       <p className="text-lg text-gray-700">کد ملی شما: {user?.nationalCode}</p>
     </div>
   );

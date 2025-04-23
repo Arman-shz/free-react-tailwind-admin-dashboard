@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap")
 layer(base);
 
+@font-face {
+  font-family: Vazirmatn;
+  src: url(/public/fonts/Vazirmatn-Regular.woff2);
+}
+
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-*: initial;
+  --font-vazirmatn: Vazirmatn, sans-serif;
   --font-outfit: Outfit, sans-serif;
 
   --breakpoint-*: initial;

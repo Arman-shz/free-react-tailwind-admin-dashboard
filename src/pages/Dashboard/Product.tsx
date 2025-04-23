@@ -73,11 +73,11 @@ const ProductPage = () => {
   return (
     <div className="min-h-screen dark:bg-gradient-to-br from-[#1e1e2f] via-[#2d2d44] to-[#3f3f5a] px-6 py-10">
      <div className="flex justify-between items-center mb-10 max-w-7xl mx-auto">
-     <h1 className="text-4xl font-extrabold text-gray-500">لیست محصولات</h1>
+     <h1 className="text-4xl font-vazirmatn text-gray-500">لیست محصولات</h1>
     
      <button
       className="flex items-center gap-2 bg-gradient-to-br from-[#00A8E8] via-[#007EA7] to-[#003459]
-      text-white px-5 py-2 rounded-xl shadow-lg hover:brightness-120 transition-all"
+      text-white px-5 py-2 rounded-xl shadow-lg hover:brightness-120 transition-all font-vazirmatn"
       onClick={() => navigate("/productList/add")}
      >
       <Plus size={18} />
@@ -95,13 +95,13 @@ const ProductPage = () => {
   <div className="relative h-32 bg-cyan-500">
     <div className="absolute bottom-0 left-0 w-full h-8 bg-white rotate-[4deg] origin-top-left z-10"></div>
 
-    <div className="absolute top-3 right-3 z-20 bg-white rounded-full px-4 py-2 text-cyan-600 font-bold text-lg shadow-md">
+    <div className="absolute top-3 right-3 z-20 bg-white rounded-full px-4 py-2 text-cyan-600 font-vazirmatn text-lg shadow-md">
       {product.price.toLocaleString()} تومان
     </div>
 
     <div className="absolute top-3 left-3 z-20 text-white">
-      <h3 className="font-bold text-lg">{product.brand}</h3>
-      <p className="text-sm">{product.description}</p>
+      <h3 className="font-vazirmatn text-lg">{product.brand}</h3>
+      <p className="text-sm font-vazirmatn">{product.description}</p>
     </div>
   </div>
 
@@ -118,20 +118,20 @@ const ProductPage = () => {
   <div className="px-6 pt-6 pb-4 flex flex-col items-center gap-3">
     <button
       onClick={() => navigate(`/productList/details/${product.id}`)}
-      className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold py-2 px-6 rounded-full shadow hover:brightness-110"
+      className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-vazirmatn py-2 px-6 rounded-full shadow hover:brightness-110"
     >
       مشاهده جزئیات
     </button>
     <div className="flex gap-3">
       <button
         onClick={() => navigate(`/productList/edit/${product.id}`)}
-        className="text-sm text-cyan-600 border border-cyan-500 rounded-full px-4 py-1 hover:bg-cyan-100"
+        className="text-sm font-vazirmatn text-cyan-600 border border-cyan-500 rounded-full px-4 py-1 hover:bg-cyan-100"
       >
         ویرایش
       </button>
       <button
         onClick={() => handleDelete(product.id)}
-        className="text-sm text-red-600 border border-red-500 rounded-full px-4 py-1 hover:bg-red-100"
+        className="text-sm font-vazirmatn text-red-600 border border-red-500 rounded-full px-4 py-1 hover:bg-red-100"
       >
         حذف
       </button>

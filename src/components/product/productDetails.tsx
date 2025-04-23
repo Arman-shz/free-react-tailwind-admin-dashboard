@@ -33,20 +33,20 @@ const ProductDetails = () => {
       <div className="md:w-1/2 p-10 bg-[#fdfdfd] text-right space-y-6">
         <div>
           <p className="text-sm text-gray-500 font-medium tracking-wide">محصول</p>
-          <h2 className="text-3xl font-extrabold text-[#FF5722] leading-snug">{product.brand}</h2>
+          <h2 className="text-3xl font-vazirmatn text-[#FF5722] leading-snug">{product.brand}</h2>
         </div>
 
-        <p className="text-base text-gray-700 leading-relaxed font-light">{product.description}</p>
+        <p className="text-base text-gray-700 leading-relaxed font-vazirmatn">{product.description}</p>
 
         <div className="text-sm space-y-1">
           <p className="text-gray-500 font-semibold">قیمت</p>
-          <p className="text-2xl text-red-500 font-bold">{product.price.toLocaleString()} تومان</p>
+          <p className="text-2xl text-red-500 font-vazirmatn">{product.price.toLocaleString()} تومان</p>
         </div>
 
         <div className="pt-4">
           <button
             onClick={() => navigate("/productList")}
-            className="w-full py-3 bg-gradient-to-r from-[#00A8E8] to-[#007EA7] text-white font-semibold text-lg rounded-xl shadow-md hover:scale-[1.02] transition-transform"
+            className="w-full py-3 bg-gradient-to-r from-[#00A8E8] to-[#007EA7] text-white font-vazirmatn text-lg rounded-xl shadow-md hover:scale-[1.02] transition-transform"
           >
             ← برگشت به محصولات
           </button>
