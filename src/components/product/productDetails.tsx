@@ -17,7 +17,7 @@ const ProductDetails = () => {
   }, [id]);
 
   if (!product) {
-    return <p className="text-center mt-10 text-xl font-semibold">محصول یافت نشد...</p>;
+    return <p className="text-center mt-10 text-xl font-semibold text-gray-600">محصول یافت نشد...</p>;
   }
 
   return (
@@ -30,23 +30,23 @@ const ProductDetails = () => {
         />
       </div>
 
-      <div className="md:w-1/2 p-10 bg-[#fdfdfd] text-right space-y-5">
+      <div className="md:w-1/2 p-10 bg-[#fdfdfd] text-right space-y-6">
         <div>
-          <p className="text-sm text-gray-500 font-medium">محصول</p>
-          <h2 className="text-3xl font-bold text-[#FF5722]">{product.brand}</h2>
+          <p className="text-sm text-gray-500 font-medium tracking-wide">محصول</p>
+          <h2 className="text-3xl font-extrabold text-[#FF5722] leading-snug">{product.brand}</h2>
         </div>
 
-        <p className="text-gray-700 text-base leading-relaxed">{product.description}</p>
+        <p className="text-base text-gray-700 leading-relaxed font-light">{product.description}</p>
 
-        <div className="text-sm">
-          <p className="text-gray-500 font-semibold mb-1">قیمت</p>
+        <div className="text-sm space-y-1">
+          <p className="text-gray-500 font-semibold">قیمت</p>
           <p className="text-2xl text-red-500 font-bold">{product.price.toLocaleString()} تومان</p>
         </div>
 
-        <div className="pt-2">
+        <div className="pt-4">
           <button
             onClick={() => navigate("/productList")}
-            className="w-full py-3 bg-gradient-to-r from-[#00A8E8] to-[#007EA7] text-white font-semibold rounded-xl shadow-md hover:scale-[1.02] transition-transform"
+            className="w-full py-3 bg-gradient-to-r from-[#00A8E8] to-[#007EA7] text-white font-semibold text-lg rounded-xl shadow-md hover:scale-[1.02] transition-transform"
           >
             ← برگشت به محصولات
           </button>
